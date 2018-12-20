@@ -4,11 +4,27 @@
     <p class="text-center display-4">Virtual Scrolling</p>
   </div>
   <hr>
+  <div class="col-8 offset-2 mb-3">
+    <div class="btn-group" role="group">
+      <button class="btn btn-info btn-small" (click)="goLast()">
+        Go to last
+      </button>
+      <button class="btn btn-secondary btn-small" (click)="goMiddle()">
+        Go middle
+      </button>
+      <button class="btn btn-primary btn-small" (click)="goBeginning()">
+        Go beginging
+      </button>
+    </div>
+  </div>
   <div class="col-8 offset-2">
     <cdk-virtual-scroll-viewport itemSize="50" class="list-container list-group">
-      <div *cdkVirtualFor="let p of people; let i = index; let countItems = count" class="list-group-item">
-        Item: {{ i }} / {{ countItems }}
+      <div *cdkVirtualFor="let p of people; let i = index; let countItems = count"
+       class="list-group-item wow slideInUp">
+          Item: {{ i }} / {{ countItems }}
       </div>
     </cdk-virtual-scroll-viewport>
   </div>
 </div>
+
+
